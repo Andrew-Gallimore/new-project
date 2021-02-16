@@ -1,0 +1,35 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/Artwork_Zone.png",
+                "type": "image",
+                "key": "Artwork_Zone"
+            },
+            {
+                "url": "assets/dbmx2dt-7e7c10c2-637f-41c7-8d95-0295afa8abd8.jpg",
+                "type": "image",
+                "key": "dbmx2dt-7e7c10c2-637f-41c7-8d95-0295afa8abd8"
+            },
+            {
+                "url": "assets/Level.js",
+                "type": "sceneFile",
+                "key": "Level"
+            },
+            {
+                "url": [
+                    "components/User_Movement.js",
+                    "components/Physics.js"
+                ],
+                "type": "scripts",
+                "key": "User_Movement"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2
+    }
+}

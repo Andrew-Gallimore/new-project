@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Senar.io Island</title>
+    <link rel="icon" type="image/png" href="/senar.io/Uni/Favicon.png" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+    <script src="loadingRoom.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> 
+</head>
+<style>
+        body {
+            margin: 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:  #a2a2a2;
+            background-image: linear-gradient(to bottom right, #bfbfbf, #8a8a8a);
+        }
+        canvas {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: auto !important;
+            height: 100% !important;
+        }
+        button, input[type="submit"], input[type="reset"] {
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+        }
+        #show {
+            position: absolute;
+            bottom: 5vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 10;
+        }
+        #show2 {
+            position: absolute;
+            width: 100%;
+            bottom: 1vh;
+            display: none;
+            z-index: 10;
+        }
+        #show button {
+            font-size: 2rem;
+            border: solid 1px black;
+            border-radius: 7px;
+            background: none;
+            color: black;
+            padding: 5px;
+            width: 25%;
+            margin: 2%;
+            height: 15vh;
+        }
+        #show2 .top button {
+            font-size: 1.5rem;
+            border: solid 1px black;
+            border-radius: 7px;
+            background: none;
+            color: black;
+            padding: 5px;
+            width: 10%;
+            margin-left: 10px;
+            height: 8vh;
+        }
+        #show2 .top button:last-child {
+            float: right;
+            margin-right: 10px;
+        }
+        #show2 .bottom button {
+            font-size: 1.5rem;
+            border: solid 1px black;
+            border-radius: 7px;
+            background: none;
+            color: black;
+            padding: 5px;
+            width: 10%;
+            margin-left: 10px;
+            height: 15vh;
+        }
+        #show2 .bottom button:last-child {
+            float: right;
+            margin-right: 10px;
+        }
+        @media (min-aspect-ratio: 16/12) {
+            #show {
+                display: none !important;
+            }
+            #show2 {
+                display: none;
+            }
+        }
+        @media (min-aspect-ratio: 16/9) {
+            canvas {
+                width: auto !important;
+                height: 100% !important;
+            }
+        }
+        @media (max-aspect-ratio: 16/9) {
+            canvas {
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+
+        /* The styleing for the loader animation */
+        .loading {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 101;
+            flex-direction: column;
+        }
+        .hidden {
+            animation: fadOut 0.7s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadOut {
+            0% {
+                opacity: 1;
+                visibility: visible;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        .loading h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            color: white;
+        }
+        .loading h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            font-size: 1.35rem;
+            color: rgb(255, 255, 255);
+        }
+        .loader {
+            width: 75px;
+            height: 100px;
+            position: relative;
+        }
+        .loader__bar {
+            position: absolute;
+            bottom: 0;
+            width: 10px;
+            height: 50%;
+            background: #fff;
+            transform-origin: center bottom;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
+        }
+        .loader__bar:nth-child(1) {
+            left: 0px;
+            transform: scale(1, 0.2);
+            animation: barUp1 4s infinite;
+        }
+        .loader__bar:nth-child(2) {
+            left: 15px;
+            transform: scale(1, 0.4);
+            animation: barUp2 4s infinite;
+        }
+        .loader__bar:nth-child(3) {
+            left: 30px;
+            transform: scale(1, 0.6);
+            animation: barUp3 4s infinite;
+        }
+        .loader__bar:nth-child(4) {
+            left: 45px;
+            transform: scale(1, 0.8);
+            animation: barUp4 4s infinite;
+        }
+        .loader__bar:nth-child(5) {
+            left: 60px;
+            transform: scale(1, 1);
+            animation: barUp5 4s infinite;
+        }
+        .loader__ball {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            animation: ball 4s infinite;
+        }
+        @keyframes ball {
+            0% {
+                transform: translate(0, 0);
+            }
+            5% {
+                transform: translate(8px, -14px);
+            }
+            10% {
+                transform: translate(15px, -10px);
+            }
+            17% {
+                transform: translate(23px, -24px);
+            }
+            20% {
+                transform: translate(30px, -20px);
+            }
+            27% {
+                transform: translate(38px, -34px);
+            }
+            30% {
+                transform: translate(45px, -30px);
+            }
+            37% {
+                transform: translate(53px, -44px);
+            }
+            40% {
+                transform: translate(60px, -40px);
+            }
+            50% {
+                transform: translate(60px, 0);
+            }
+            57% {
+                transform: translate(53px, -14px);
+            }
+            60% {
+                transform: translate(45px, -10px);
+            }
+            67% {
+                transform: translate(37px, -24px);
+            }
+            70% {
+                transform: translate(30px, -20px);
+            }
+            77% {
+                transform: translate(22px, -34px);
+            }
+            80% {
+                transform: translate(15px, -30px);
+            }
+            87% {
+                transform: translate(7px, -44px);
+            }
+            90% {
+                transform: translate(0, -40px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+        @keyframes barUp1 {
+            0% {
+                transform: scale(1, 0.2);
+            }
+            40% {
+                transform: scale(1, 0.2);
+            }
+            50% {
+                transform: scale(1, 1);
+            }
+            90% {
+                transform: scale(1, 1);
+            }
+            100% {
+                transform: scale(1, 0.2);
+            }
+        }
+        @keyframes barUp2 {
+            0% {
+                transform: scale(1, 0.4);
+            }
+            40% {
+                transform: scale(1, 0.4);
+            }
+            50% {
+                transform: scale(1, 0.8);
+            }
+            90% {
+                transform: scale(1, 0.8);
+            }
+            100% {
+                transform: scale(1, 0.4);
+            }
+        }
+        @keyframes barUp3 {
+            0% {
+                transform: scale(1, 0.6);
+            }
+            100% {
+                transform: scale(1, 0.6);
+            }
+        }
+        @keyframes barUp4 {
+            0% {
+                transform: scale(1, 0.8);
+            }
+            40% {
+                transform: scale(1, 0.8);
+            }
+            50% {
+                transform: scale(1, 0.4);
+            }
+            90% {
+                transform: scale(1, 0.4);
+            }
+            100% {
+                transform: scale(1, 0.8);
+            }
+        }
+        @keyframes barUp5 {
+            0% {
+                transform: scale(1, 1);
+            }
+            40% {
+                transform: scale(1, 1);
+            }
+            50% {
+                transform: scale(1, 0.2);
+            }
+            90% {
+                transform: scale(1, 0.2);
+            }
+            100% {
+                transform: scale(1, 1);
+            }
+        }
+
+</style>
+
+<script>
+    console.log('Client: Started Javascript');
+    var socket = io();
+    var keySent = false;
+    var mUp = false;
+    var mLeft = false;
+    var mRight = false;
+    var isMobile = false;
+    var error = false;
+
+    //your player data
+    var ux = 1000;
+    var uy = 900;
+    var moveSpeed = 15;
+
+    //other players current data
+    var px = [];
+    var py = [];
+    var pID = [];
+    var pnum = 0;
+    //the change between past and current
+    var pxChange = [];
+    var pyChange = [];
+    var pxChange2 = [];
+    var pyChange2 = [];
+    //past players data
+    var Oldpx = [];
+    var Oldpy = [];
+    var OldpID = [];
+    var Oldpnum = 0;
+    var OldpDelay = 0;
+    var OldpCounter = 0;
+    //farther past players data
+    var Olderpx = [];
+    var Olderpy = [];
+    var OlderpID = [];
+    var Olderpnum = 0;
+    var OlderpDelay = 0;
+    //smoothed positions
+    var Smoothpx = [];
+    var Smoothpy = [];
+
+
+    //getting my player id
+    var socketID;
+    socket.on('connect', function() {
+        socketID = socket.id;
+        console.log('Server: You have a socket ID registered');	
+
+        var element = document.querySelector(".loading");
+        document.querySelector(".loading h1").innerHTML = "🔓 Connected  to  server";
+        setTimeout(() => { element.className += " hidden"; }, 1000);
+    });
+
+    //reciveing server message
+    socket.on('serverMsg',function(data){
+		console.log('Server: ' + data.msg);	
+    });
+    
+    //getting the data for other players
+    socket.on('newPositions',function(data){
+        //getting the lastest position of people when a new one comes in
+        for (var i = 0; i < pnum; i++) {
+            Olderpx[i] = Oldpx[i];
+            Olderpy[i] = Oldpy[i];
+            OlderpID[i] = OldpID[i];
+            Olderpnum = Oldpnum;
+        }
+        //getting the last position of people when a new one comes in
+        for (var i = 0; i < pnum; i++) {
+            Oldpx[i] = px[i];
+            Oldpy[i] = py[i];
+            OldpID[i] = pID[i];
+            Oldpnum = pnum;
+
+            OlderpDelay = (OlderpDelay + OldpCounter) / 2;
+            pxChange2[i] = (Olderpx[i] - Oldpx[i]) * OlderpDelay;
+            pyChange2[i] = (Olderpy[i] - Oldpy[i]) * OlderpDelay;
+        }
+        //getting in the new positions of people
+        for (var i = 0; i < data.length; i++) {
+            px[i] = data[i].x;
+            py[i] = data[i].y;
+            pID[i] = data[i].ID;
+            pnum = data.length;
+
+            OldpDelay = (OldpDelay + OldpCounter) / 2;
+            OldpCounter = 0;
+            pxChange[i] = (Oldpx[i] - px[i]) * OldpDelay;
+            pyChange[i] = (Oldpy[i] - py[i]) * OldpDelay;
+        }
+    });
+
+    function mobile() {
+        var element = document.getElementById("show2");
+        isMobile = true;
+        frameRate(24);
+        if (element.style.display === "block" && (window.innerWidth/window.innerHeight) < 16/12) {
+            element.style.display = "none";
+        } else if((window.innerWidth/window.innerHeight) > 16/12){
+            element.style.display = "block";
+        }
+    }
+    function jump(data) {
+        if (data == 0) {
+            mUp = true;
+        }else if (data == 1){
+            mUp = false;
+        }else {
+            console.log("Mobile 'mUp' not set up correctly.")
+        }
+    }
+    function left(data) {
+        if (data == 0) {
+            mLeft = true;
+        }else if (data == 1){
+            mLeft = false;
+        }else {
+            console.log("Mobile 'mLeft' not set up correctly.")
+        }
+    }
+    function right(data) {
+        if (data == 0) {
+            mRight = true;
+        }else if (data == 1){
+            mRight = false;
+        }else {
+            console.log("Mobile 'mRight' not set up correctly.")
+        }
+    }
+    
+    //p5 functions
+    function setup() {
+        console.log('Client: p5.js: Setup started');
+        createCanvas(2000, 1125);
+        if (/Mobi/i.test(navigator.userAgent) || /Android/i.test(navigator.userAgent)) {
+            mobile();
+        }
+    }
+
+    function draw() {
+        background(220);
+        OldpCounter++;
+        if(frameCount < 2) {
+            console.log('Client: p5.js: Draw started');
+        }
+        if(millis() > 3500 && socketID == undefined && error == false) {
+            console.log("Unable to connect to server: Timeout 3.5s");
+            document.querySelector(".loading h1").innerHTML = "😲 Unable to connect to server";
+            document.querySelector(".loading h2").innerHTML = "Uh oh! Double check your code or if your connected to the internet";
+            error = true;
+        }
+        if (keyIsDown(UP_ARROW) || keyIsDown(32) || keyIsDown(87) || mUp) {
+            if(uy - 40 >= 0) {
+                uy = uy - moveSpeed * (deltaTime / 50);
+            }
+        }
+        if (keyIsDown(DOWN_ARROW) || keyIsDown(83)) {
+            if(uy + 40 <= 1125) {
+                uy = uy + moveSpeed * (deltaTime / 50);
+            }
+        }
+        if (keyIsDown(LEFT_ARROW ) || keyIsDown(65) || mLeft) {
+            if(ux - 40 >= 0) {
+                ux = ux - moveSpeed * (deltaTime / 50);
+            }
+        }
+        if (keyIsDown(RIGHT_ARROW) || keyIsDown(68) || mRight) {
+            if(ux + 40 <= 2000) {
+                ux = ux + moveSpeed * (deltaTime / 50);
+            }
+        }
+
+        if(socketID !== undefined && !keySent) {
+            //dealing with local storage and getting the user into servers
+            var _supportsLocalStorage = !!window.localStorage
+            && typeof localStorage.getItem === 'function'
+            && typeof localStorage.setItem === 'function'
+            && typeof localStorage.removeItem === 'function';
+            if (!_supportsLocalStorage) {
+                alert("Uh Oh! Looks like your browser doesn't support the needed Local Storage");
+            }else {
+                var tempKey = getItem('chrome:Q9fNEdb_tempKey');
+                var lastUser = getItem('lastUser');
+                if(Object.values(tempKey)[0] < new Date().getTime() - 120000) {
+                    //if it took longer than 2 minutes to read the data then it would have been deleted
+                    console.log("Your sign in to server timed out 'Timeout 120s' so you will need to enter server again")
+                }else {
+                    //send Object.values(tempKey)[1] to server to put you into the correct server
+                    console.log("Your sign in to server was found, sending to server")
+                    socket.emit('SIIDs', {
+                        code: Object.values(tempKey)[1],
+                        username: Object.values(lastUser)[0],
+                        ID: "" + socketID,
+                        test: true
+                    });
+                }
+            }
+            keySent = true;
+        }
+
+        //moveing the players from their old positions to their new ones but more smoothed
+        if(Oldpnum === pnum) {
+            for(var i = 0 ; i < pnum; i++) {
+                Oldpx[i] = Oldpx[i] - pxChange[i];
+                Oldpy[i] = Oldpy[i] - pyChange[i];
+            }
+            for(var i = 0 ; i < pnum; i++) {
+                Olderpx[i] = Olderpx[i] - pxChange2[i];
+                Olderpy[i] = Olderpy[i] - pyChange2[i];
+            }
+            for(var i = 0 ; i < pnum; i++) {
+                Smoothpx[i] = (Olderpx[i] + Oldpx[i] + px[i]) / 3;
+                Smoothpy[i] = (Olderpy[i] + Oldpy[i] + py[i]) / 3;
+            }
+        }
+
+        //drawing things
+        for(var i = 0 ; i < pnum; i++) {
+            if(socketID !== pID[i] && px[i] !== undefined) {
+                fill("blue")
+                ellipse(Smoothpx[i], Smoothpy[i],80,80);
+                // fill("green")
+                // ellipse(px[i], py[i],60,60);
+            }
+        }
+        fill("red")
+        ellipse(ux,uy,80,80);
+        if(socketID !== undefined) {
+            //putting out player position
+            var pack = [];
+            pack.push({
+                ID:"" + socketID,
+                x:ux,
+                y:uy
+            });
+            socket.emit('upos',pack);
+        }
+    }
+
+    function windowResized() {
+        resizeCanvas(2000, 1125);
+        if (/Mobi/i.test(navigator.userAgent) || /Android/i.test(navigator.userAgent)) {
+            mobile();
+        }
+    }
+</script>
+
+<body>
+    <div id="show" class="show">
+        <button onmousedown ="left(0)" onmouseup ="left(1)" ontouchstart ="left(0)" ontouchend ="left(1)"><i class="fad fa-chevron-left"></i></button>
+        <button onmousedown ="jump(0)" onmouseup ="jump(1)" ontouchstart ="jump(0)" ontouchend ="jump(1)"><i class="fad fa-grip-lines"></i></button>
+        <button onmousedown ="right(0)" onmouseup ="right(1)" ontouchstart ="right(0)" ontouchend ="right(1)"><i class="fad fa-chevron-right"></i></button>
+    </div>
+    <div id="show2">
+        <div class="top">
+            <button onmousedown ="jump(0)" onmouseup ="jump(1)" ontouchstart ="jump(0)" ontouchend ="jump(1)"><i class="fad fa-grip-lines"></i></button>
+            <button onmousedown ="jump(0)" onmouseup ="jump(1)" ontouchstart ="jump(0)" ontouchend ="jump(1)"><i class="fad fa-grip-lines"></i></button>
+        </div>
+        <div class="bottom">
+            <button onmousedown ="left(0)" onmouseup ="left(1)" ontouchstart ="left(0)" ontouchend ="left(1)"><i class="fad fa-chevron-left"></i></button>
+            <button onmousedown ="right(0)" onmouseup ="right(1)" ontouchstart ="right(0)" ontouchend ="right(1)"><i class="fad fa-chevron-right"></i></button>
+        </div>
+    </div>
+    <div class="loading">
+        <div class="loader">
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__ball"></div>
+        </div>
+        <h1>🔒 Connecting to Server</h1>
+        <h2></h2>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+	<title>My Game</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+	<script src="lib/phaser.js"></script>
+	<script src="main.js"></script>
+
+	<style>
+		body {
+			background: black;
+			margin: 0;
+			padding: 0;
+		}
+		canvas {
+			width: 100% !Important;
+			height: 100% !Important;
+		}
+	</style>
+
+</head>
+<!-- custom script -->
+<script>
+	var socket = io();
+	this.socket = socket;
+	var keySent = false;
+
+	//other players current data
+    var px = [];
+	var py = [];
+	this.px;
+    this.py;
+	var pID = [];
+	this.pID;
+	var pnum = 0;
+	this.pnum;
+
+	//getting my player id
+	var socketID;
+	this.socketID;
+    socket.on('connect', function() {
+		socketID = socket.id;
+		this.socketID = socket.id;
+		console.log('Server: You have a socket ID registered');
+		
+		if(!keySent) {
+			//dealing with local storage and getting the user into servers
+			var _supportsLocalStorage = !!window.localStorage
+			&& typeof localStorage.getItem === 'function'
+			&& typeof localStorage.setItem === 'function'
+			&& typeof localStorage.removeItem === 'function';
+			if (!_supportsLocalStorage) {
+				alert("Uh Oh! Looks like your browser doesn't support the needed Local Storage");
+			}else {
+				var tempKey = JSON.parse(localStorage.getItem('chrome:Q9fNEdb_tempKey'));
+				var lastUser = JSON.parse(localStorage.getItem('lastUser'));
+				if(Object.values(tempKey)[0] < new Date().getTime() - 120000) {
+					//if it took longer than 2 minutes to read the data then it would have been deleted
+					console.log("Your sign in to server timed out 'Timeout 120s' so you will need to enter server again")
+				}else {
+					//send Object.values(tempKey)[1] to server to put you into the correct server
+					console.log("Your sign in to server was found, sending to server")
+					socket.emit('SIIDs', {
+						code: Object.values(tempKey)[1],
+						username: Object.values(lastUser)[0],
+						ID: "" + socketID,
+						test: true
+					});
+				}
+			}
+			keySent = true;
+    	}
+    });
+
+    //reciveing server message
+    socket.on('serverMsg',function(data){
+		console.log('Server: ' + data.msg);	
+    });
+    
+    //getting the data for other players
+    socket.on('newPositions',function(data){
+        //getting in the new positions of people
+        for (var i = 0; i < data.length; i++) {
+            px[i] = data[i].x;
+            py[i] = data[i].y;
+            pID[i] = data[i].ID;
+		}
+		pnum = data.length;
+		this.pnum = pnum;
+		this.px = px;
+		this.py = py;
+		this.pID = pID;
+	});
+</script>
+
+<body>
+</body>
+
+</html>
