@@ -1,0 +1,274 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/Artwork_Zone.png",
+                "type": "image",
+                "key": "Artwork_Zone"
+            },
+            {
+                "url": "assets/dbmx2dt-7e7c10c2-637f-41c7-8d95-0295afa8abd8.png",
+                "type": "image",
+                "key": "dbmx2dt-7e7c10c2-637f-41c7-8d95-0295afa8abd8"
+            },
+            {
+                "url": [
+                    "components/DepthSort.js"
+                ],
+                "type": "scripts",
+                "key": "DepthSort"
+            },
+            {
+                "url": "assets/Envi/Grass Edge.png",
+                "type": "image",
+                "key": "Grass Edge"
+            },
+            {
+                "url": "assets/Envi/Grass Full.png",
+                "type": "image",
+                "key": "Grass Full"
+            },
+            {
+                "url": "assets/Player/Idle_Left_1.png",
+                "type": "image",
+                "key": "Idle_Left_1"
+            },
+            {
+                "url": "assets/Player/Idle_Left_2.png",
+                "type": "image",
+                "key": "Idle_Left_2"
+            },
+            {
+                "url": "assets/Player/Idle_Right_1.png",
+                "type": "image",
+                "key": "Idle_Right_1"
+            },
+            {
+                "url": "assets/Player/Idle_Right_2.png",
+                "type": "image",
+                "key": "Idle_Right_2"
+            },
+            {
+                "url": "assets/Level.js",
+                "type": "sceneFile",
+                "key": "Level"
+            },
+            {
+                "url": "assets/Envi/Ocian_Foam-1.png",
+                "type": "image",
+                "key": "Ocian_Foam-1"
+            },
+            {
+                "url": "assets/Envi/Ocian_Foam-1.2.png",
+                "type": "image",
+                "key": "Ocian_Foam-1.2"
+            },
+            {
+                "url": "assets/Envi/Ocian_Foam-1.3.png",
+                "type": "image",
+                "key": "Ocian_Foam-1.3"
+            },
+            {
+                "url": "assets/Envi/Ocian_Foam-2.png",
+                "type": "image",
+                "key": "Ocian_Foam-2"
+            },
+            {
+                "url": "assets/Envi/Ocian_Foam-2.2.png",
+                "type": "image",
+                "key": "Ocian_Foam-2.2"
+            },
+            {
+                "url": "assets/Envi/Plants/Pebbles-1.png",
+                "type": "image",
+                "key": "Pebbles-1"
+            },
+            {
+                "url": "assets/Envi/Plants/Pebbles-2.png",
+                "type": "image",
+                "key": "Pebbles-2"
+            },
+            {
+                "url": "assets/Player/player_animations.json",
+                "type": "animation",
+                "key": "player_animations"
+            },
+            {
+                "url": [
+                    "prefabs/r_tree_1.js"
+                ],
+                "type": "scripts",
+                "key": "r_tree_1"
+            },
+            {
+                "url": "assets/Envi/Plants/R-Bush-1.png",
+                "type": "image",
+                "key": "R-Bush-1"
+            },
+            {
+                "url": "assets/Envi/Plants/R-Bush-2.png",
+                "type": "image",
+                "key": "R-Bush-2"
+            },
+            {
+                "url": "assets/Envi/Plants/R-Shadow-1.png",
+                "type": "image",
+                "key": "R-Shadow-1"
+            },
+            {
+                "url": "assets/Envi/Plants/R-Shadow-2.png",
+                "type": "image",
+                "key": "R-Shadow-2"
+            },
+            {
+                "url": "assets/Envi/Plants/R-Shadow-2 Mask.png",
+                "type": "image",
+                "key": "R-Shadow-2 Mask"
+            },
+            {
+                "url": "assets/Envi/Plants/R-Shadow-3.png",
+                "type": "image",
+                "key": "R-Shadow-3"
+            },
+            {
+                "url": "assets/Envi/Plants/R-Shadow-4.png",
+                "type": "image",
+                "key": "R-Shadow-4"
+            },
+            {
+                "url": "assets/Envi/Plants/R-Tree-1.png",
+                "type": "image",
+                "key": "R-Tree-1"
+            },
+            {
+                "url": "assets/Envi/Plants/R-Tree-2.png",
+                "type": "image",
+                "key": "R-Tree-2"
+            },
+            {
+                "url": "assets/Envi/Sand Edge.png",
+                "type": "image",
+                "key": "Sand Edge"
+            },
+            {
+                "url": "assets/Envi/Sand Full.png",
+                "type": "image",
+                "key": "Sand Full"
+            },
+            {
+                "url": "assets/Envi/Shells/Shell_1.png",
+                "type": "image",
+                "key": "Shell_1"
+            },
+            {
+                "url": "assets/Envi/Shells/Shell_10.png",
+                "type": "image",
+                "key": "Shell_10"
+            },
+            {
+                "url": "assets/Envi/Shells/Shell_2.png",
+                "type": "image",
+                "key": "Shell_2"
+            },
+            {
+                "url": "assets/Envi/Shells/Shell_3.png",
+                "type": "image",
+                "key": "Shell_3"
+            },
+            {
+                "url": "assets/Envi/Shells/Shell_4.png",
+                "type": "image",
+                "key": "Shell_4"
+            },
+            {
+                "url": "assets/Envi/Shells/Shell_5.png",
+                "type": "image",
+                "key": "Shell_5"
+            },
+            {
+                "url": "assets/Envi/Shells/Shell_6.png",
+                "type": "image",
+                "key": "Shell_6"
+            },
+            {
+                "url": "assets/Envi/Shells/Shell_7.png",
+                "type": "image",
+                "key": "Shell_7"
+            },
+            {
+                "url": "assets/Envi/Shells/Shell_8.png",
+                "type": "image",
+                "key": "Shell_8"
+            },
+            {
+                "url": "assets/Envi/Shells/Shell_9.png",
+                "type": "image",
+                "key": "Shell_9"
+            },
+            {
+                "url": [
+                    "components/User_Movement.js",
+                    "components/Physics.js"
+                ],
+                "type": "scripts",
+                "key": "User_Movement"
+            },
+            {
+                "url": "assets/Player/Walk_Left_1.png",
+                "type": "image",
+                "key": "Walk_Left_1"
+            },
+            {
+                "url": "assets/Player/Walk_Left_2.png",
+                "type": "image",
+                "key": "Walk_Left_2"
+            },
+            {
+                "url": "assets/Player/Walk_Left_3.png",
+                "type": "image",
+                "key": "Walk_Left_3"
+            },
+            {
+                "url": "assets/Player/Walk_Left_4.png",
+                "type": "image",
+                "key": "Walk_Left_4"
+            },
+            {
+                "url": "assets/Player/Walk_Right_1.png",
+                "type": "image",
+                "key": "Walk_Right_1"
+            },
+            {
+                "url": "assets/Player/Walk_Right_2.png",
+                "type": "image",
+                "key": "Walk_Right_2"
+            },
+            {
+                "url": "assets/Player/Walk_Right_3.png",
+                "type": "image",
+                "key": "Walk_Right_3"
+            },
+            {
+                "url": "assets/Player/Walk_Right_4.png",
+                "type": "image",
+                "key": "Walk_Right_4"
+            },
+            {
+                "url": "assets/Envi/wave_animations.json",
+                "type": "animation",
+                "key": "wave_animations"
+            },
+            {
+                "url": "components/Waves.js",
+                "type": "script",
+                "key": "Waves"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2
+    }
+}
