@@ -41,3 +41,6 @@ Yay! We finaly have this version (v2.3.0) up live for people to view:
   * There is a minimal amount of optemizeation going on, so performance is not as good as it will be.
   * I have actualy changed the game engine *(for the game it's self, not the sign in screen)* from p5.js to phaser.js (since v2.0).
 
+*Written: Feb 28, 2021*
+
+*Creator/Author: Andrew Gallimore*
