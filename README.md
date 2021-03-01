@@ -32,12 +32,12 @@ You are able to connect to a created server useing a specific code, then join th
 <h2></h2>
 <h3>🔌 Live Demo:</h3>
 
-Well I currently only have v1.2.1 *(Not yet v2.3.0)* up live for people to view:
+Yay! We finaly have this version (v2.3.0) up live for people to view:
 
-[✨ Try it Out! ✨](https://senario-islands-v1s2-a.glitch.me)
+[✨ Try it Out! ✨](https://senario-islands-v2s3-b.glitch.me)
 
   **Notes:**
-  * V1's only goal was to get the networking side of things working, so all the assets/artwork will & have changed already.
+  * V1's only goal was to get the networking side of things working, so all the assets/artwork has massively been changed.
   * There is a minimal amount of optemizeation going on, so performance is not as good as it will be.
-  * I have actualy changed the game engine *(for the game it's self, not the sign in screen)* from p5.js to phaser.js.
+  * I have actualy changed the game engine *(for the game it's self, not the sign in screen)* from p5.js to phaser.js (since v2.0).
 
