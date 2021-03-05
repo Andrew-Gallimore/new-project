@@ -1,0 +1,170 @@
+{
+    "components": [
+        {
+            "name": "User_Movement",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": []
+        },
+        {
+            "name": "Physics",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": [
+                {
+                    "name": "static",
+                    "label": "Is static",
+                    "tooltip": "Is static",
+                    "defValue": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                },
+                {
+                    "name": "autoSize",
+                    "label": "Collider Box",
+                    "tooltip": "Collider Box",
+                    "defValue": "Auto",
+                    "type": {
+                        "id": "option",
+                        "options": [
+                            "Auto",
+                            "Custom"
+                        ]
+                    }
+                },
+                {
+                    "name": "bwidth",
+                    "label": "Width",
+                    "tooltip": "Width",
+                    "defValue": 0,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "bheight",
+                    "label": "Height",
+                    "tooltip": "Height",
+                    "defValue": 0,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "bxOffset",
+                    "label": "X Offset",
+                    "tooltip": "X Offset",
+                    "defValue": 0,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "byOffset",
+                    "label": "Y Offset",
+                    "tooltip": "Y Offset",
+                    "defValue": 0,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "centerX",
+                    "label": "Center X",
+                    "tooltip": "Center X",
+                    "defValue": true,
+                    "type": {
+                        "id": "boolean"
+                    }
+                },
+                {
+                    "name": "centerY",
+                    "label": "Center Y",
+                    "tooltip": "Center Y",
+                    "defValue": true,
+                    "type": {
+                        "id": "boolean"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "DepthSort",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "properties": [
+                {
+                    "name": "offset",
+                    "label": "Offset Y",
+                    "tooltip": "Offset Y",
+                    "defValue": 0,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "force",
+                    "label": "Force Y",
+                    "tooltip": "Force Y",
+                    "defValue": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                },
+                {
+                    "name": "exact",
+                    "label": "Exact Y",
+                    "tooltip": "Property 1",
+                    "defValue": 1000,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Waves",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "properties": [
+                {
+                    "name": "type",
+                    "label": "Type",
+                    "tooltip": "Type",
+                    "defValue": "",
+                    "type": {
+                        "id": "option",
+                        "options": [
+                            "Top",
+                            "Bottom"
+                        ]
+                    }
+                },
+                {
+                    "name": "offset",
+                    "label": "Start-Time Offset",
+                    "tooltip": "Start-Time Offset",
+                    "defValue": 0,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "time",
+                    "label": "Run-Time Offset",
+                    "tooltip": "Run-Time Offset",
+                    "defValue": 0,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Object Script Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

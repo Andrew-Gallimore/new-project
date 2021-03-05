@@ -1,0 +1,1901 @@
+{
+    "id": "01aefa93-6044-4159-8358-7e91310aa05f",
+    "sceneType": "SCENE",
+    "settings": {
+        "snapEnabled": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level",
+        "borderWidth": 500,
+        "borderHeight": 200
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "7a2c3c4c-5017-49ed-855c-f243efc215d8",
+            "label": "artwork_Zone",
+            "components": [],
+            "texture": {
+                "key": "Artwork_Zone"
+            },
+            "x": 608,
+            "y": 352
+        },
+        {
+            "type": "Rectangle",
+            "id": "cf6ece0c-2897-4a5f-a6ac-260953c32b34",
+            "label": "rectangle",
+            "components": [],
+            "x": 531,
+            "y": 2443,
+            "scaleX": 139.53721410985838,
+            "scaleY": -117.11519220759233,
+            "isFilled": true,
+            "fillColor": "#4cafcb",
+            "width": 128,
+            "height": 128
+        },
+        {
+            "type": "Image",
+            "id": "32da1b1c-258d-40d3-a24a-63a20060498e",
+            "label": "ocian_Foam_1_1_2",
+            "components": [],
+            "texture": {
+                "key": "Ocian_Foam-1"
+            },
+            "x": 2640,
+            "y": 1680,
+            "angle": 2,
+            "alpha": 0.9,
+            "alphaTopLeft": 0.9,
+            "alphaTopRight": 0.9,
+            "alphaBottomLeft": 0.9,
+            "alphaBottomRight": 0.9
+        },
+        {
+            "type": "Image",
+            "id": "c53d5783-d792-4d64-a8ea-86b9fe53e639",
+            "label": "ocian_Foam_1_3_1",
+            "components": [],
+            "texture": {
+                "key": "Ocian_Foam-1"
+            },
+            "x": -2608,
+            "y": 128,
+            "angle": 83,
+            "alpha": 0.9,
+            "alphaTopLeft": 0.9,
+            "alphaTopRight": 0.9,
+            "alphaBottomLeft": 0.9,
+            "alphaBottomRight": 0.9
+        },
+        {
+            "type": "Image",
+            "id": "4caec9e5-67fc-494f-937b-b41936831682",
+            "label": "ocian_Foam_1_1",
+            "components": [],
+            "texture": {
+                "key": "Ocian_Foam-1"
+            },
+            "x": 688,
+            "y": 1472,
+            "angle": -11,
+            "alpha": 0.9,
+            "alphaTopLeft": 0.9,
+            "alphaTopRight": 0.9,
+            "alphaBottomLeft": 0.9,
+            "alphaBottomRight": 0.9
+        },
+        {
+            "type": "Image",
+            "id": "ad2334c4-9b4f-4c7e-9a0b-124f7e6639b1",
+            "label": "ocian_Foam_1_2",
+            "components": [],
+            "texture": {
+                "key": "Ocian_Foam-1"
+            },
+            "x": -576,
+            "y": 1584,
+            "angle": 4,
+            "alpha": 0.9,
+            "alphaTopLeft": 0.9,
+            "alphaTopRight": 0.9,
+            "alphaBottomLeft": 0.9,
+            "alphaBottomRight": 0.9
+        },
+        {
+            "type": "Image",
+            "id": "8a84737a-e27e-4241-a759-3b1e40314d7b",
+            "label": "ocian_Foam_1_3",
+            "components": [],
+            "texture": {
+                "key": "Ocian_Foam-1"
+            },
+            "x": -1792,
+            "y": 1216,
+            "angle": 25,
+            "alpha": 0.9,
+            "alphaTopLeft": 0.9,
+            "alphaTopRight": 0.9,
+            "alphaBottomLeft": 0.9,
+            "alphaBottomRight": 0.9
+        },
+        {
+            "type": "Image",
+            "id": "11705836-ec0a-46fe-8997-a0aff3b4ef07",
+            "label": "ocian_Foam_1_1_1",
+            "components": [],
+            "texture": {
+                "key": "Ocian_Foam-1"
+            },
+            "x": 1168,
+            "y": 1568,
+            "angle": 7,
+            "alpha": 0.9,
+            "alphaTopLeft": 0.9,
+            "alphaTopRight": 0.9,
+            "alphaBottomLeft": 0.9,
+            "alphaBottomRight": 0.9
+        },
+        {
+            "type": "Sprite",
+            "id": "6b2dd39b-fc90-425d-ab76-10ae201bb285",
+            "label": "ocian_Foam_2",
+            "scope": "PUBLIC",
+            "components": [
+                "Waves"
+            ],
+            "Waves.type": "Bottom",
+            "texture": {
+                "key": "Ocian_Foam-2"
+            },
+            "x": 880,
+            "y": 2752
+        },
+        {
+            "type": "Sprite",
+            "id": "3ce0b99d-1311-4cb6-aff5-6b4b2d130972",
+            "label": "ocian_Foam_1",
+            "scope": "PUBLIC",
+            "components": [
+                "Waves"
+            ],
+            "Waves.type": "Top",
+            "texture": {
+                "key": "Ocian_Foam-1"
+            },
+            "x": 912,
+            "y": 2720
+        },
+        {
+            "type": "Sprite",
+            "id": "2679711c-5514-46e0-9b6a-ade1dff1d634",
+            "label": "ocian_Foam_2_3",
+            "scope": "PUBLIC",
+            "components": [
+                "Waves"
+            ],
+            "Waves.type": "Bottom",
+            "Waves.offset": 1000,
+            "Waves.time": 1000,
+            "texture": {
+                "key": "Ocian_Foam-2"
+            },
+            "x": -592,
+            "y": 2160,
+            "angle": 5
+        },
+        {
+            "type": "Sprite",
+            "id": "1605dd43-de03-4789-ad39-28d304ff55c2",
+            "label": "ocian_Foam_1_4",
+            "scope": "PUBLIC",
+            "components": [
+                "Waves"
+            ],
+            "Waves.type": "Top",
+            "Waves.offset": 1000,
+            "Waves.time": 1000,
+            "texture": {
+                "key": "Ocian_Foam-1"
+            },
+            "x": -560,
+            "y": 2176,
+            "angle": 5
+        },
+        {
+            "type": "Sprite",
+            "id": "bfc0df89-9731-4349-be15-0c833e9e3752",
+            "label": "ocian_Foam_2_3_1",
+            "scope": "PUBLIC",
+            "components": [
+                "Waves"
+            ],
+            "Waves.type": "Bottom",
+            "Waves.offset": 500,
+            "Waves.time": 200,
+            "texture": {
+                "key": "Ocian_Foam-2"
+            },
+            "x": -2864,
+            "y": 1696,
+            "angle": 10
+        },
+        {
+            "type": "Sprite",
+            "id": "35674c3c-7261-4486-a66d-b2703cbc6c1a",
+            "label": "ocian_Foam_1_4_1",
+            "scope": "PUBLIC",
+            "components": [
+                "Waves"
+            ],
+            "Waves.type": "Top",
+            "Waves.offset": 500,
+            "Waves.time": 200,
+            "texture": {
+                "key": "Ocian_Foam-1"
+            },
+            "x": -2832,
+            "y": 1696,
+            "angle": 10
+        },
+        {
+            "type": "Sprite",
+            "id": "2c4506ae-64f5-4e6e-9bbb-906f31aa5649",
+            "label": "ocian_Foam_1_4_1_1",
+            "scope": "PUBLIC",
+            "components": [
+                "Waves"
+            ],
+            "Waves.type": "Top",
+            "Waves.offset": 200,
+            "Waves.time": 1000,
+            "texture": {
+                "key": "Ocian_Foam-1"
+            },
+            "x": 2960,
+            "y": 2320,
+            "angle": -8
+        },
+        {
+            "type": "Sprite",
+            "id": "b117d37b-e8b7-4307-8e74-9a250b232e1d",
+            "label": "ocian_Foam_2_3_1_1",
+            "scope": "PUBLIC",
+            "components": [
+                "Waves"
+            ],
+            "Waves.type": "Bottom",
+            "Waves.offset": 200,
+            "Waves.time": 1000,
+            "texture": {
+                "key": "Ocian_Foam-2"
+            },
+            "x": 2928,
+            "y": 2320,
+            "angle": -8
+        },
+        {
+            "type": "Sprite",
+            "id": "41671bfa-97e2-4755-a32a-c08d2c3a6e79",
+            "label": "ocian_Foam_2_4",
+            "scope": "PUBLIC",
+            "components": [
+                "Waves"
+            ],
+            "Waves.type": "Bottom",
+            "Waves.offset": 2000,
+            "texture": {
+                "key": "Ocian_Foam-2"
+            },
+            "x": -1984,
+            "y": 2752,
+            "angle": 6
+        },
+        {
+            "type": "Sprite",
+            "id": "7e54f8e9-2295-47b1-99a4-106086f3c292",
+            "label": "ocian_Foam_1_5",
+            "scope": "PUBLIC",
+            "components": [
+                "Waves"
+            ],
+            "Waves.type": "Top",
+            "Waves.offset": 2000,
+            "texture": {
+                "key": "Ocian_Foam-1"
+            },
+            "x": -1952,
+            "y": 2720,
+            "angle": 6
+        },
+        {
+            "type": "Image",
+            "id": "e7c3d2c3-bef7-451d-a4bb-10568cf36c8e",
+            "label": "sand_Edge",
+            "components": [],
+            "texture": {
+                "key": "Sand Edge"
+            },
+            "x": -1584,
+            "y": 704,
+            "angle": 19
+        },
+        {
+            "type": "Image",
+            "id": "5efca654-3ae0-4501-b994-e50720a623d0",
+            "label": "sand_Edge_3",
+            "components": [],
+            "texture": {
+                "key": "Sand Edge"
+            },
+            "x": 1584,
+            "y": 1072
+        },
+        {
+            "type": "Image",
+            "id": "91254485-6132-404a-8b4f-27f5e394c6fa",
+            "label": "sand_Full",
+            "components": [],
+            "texture": {
+                "key": "Sand Full"
+            },
+            "x": 3136,
+            "y": 800
+        },
+        {
+            "type": "Image",
+            "id": "147db178-2cf9-49c5-bfa8-fef66fb43b44",
+            "label": "sand_Full_1",
+            "components": [],
+            "texture": {
+                "key": "Sand Full"
+            },
+            "x": 4992,
+            "y": 816
+        },
+        {
+            "type": "Image",
+            "id": "fab39265-b66e-4480-991d-f1b237c930b6",
+            "label": "sand_Full_2",
+            "components": [],
+            "texture": {
+                "key": "Sand Full"
+            },
+            "x": 3552,
+            "y": -192
+        },
+        {
+            "type": "Image",
+            "id": "66ec6bba-ee5b-4ec7-a510-8dba005f7e3d",
+            "label": "sand_Full_3",
+            "components": [],
+            "texture": {
+                "key": "Sand Full"
+            },
+            "x": 4992,
+            "y": -192
+        },
+        {
+            "type": "Image",
+            "id": "89481d2e-a982-489f-8886-338b917fa319",
+            "label": "sand_Edge_5",
+            "components": [],
+            "texture": {
+                "key": "Sand Edge"
+            },
+            "x": -2128,
+            "y": -16,
+            "angle": 86
+        },
+        {
+            "type": "Image",
+            "id": "a70ae865-dfce-4e80-a853-ccd64f927a49",
+            "label": "sand_Edge_6",
+            "components": [],
+            "texture": {
+                "key": "Sand Edge"
+            },
+            "x": -2000,
+            "y": -896,
+            "angle": 19
+        },
+        {
+            "type": "Image",
+            "id": "0c139e63-5f8b-4612-94ad-5e0bb648e33e",
+            "label": "sand_Edge_5_1",
+            "components": [],
+            "texture": {
+                "key": "Sand Edge"
+            },
+            "x": -1440,
+            "y": -384,
+            "angle": 72
+        },
+        {
+            "type": "Image",
+            "id": "18ceee34-69fc-409f-b4ee-9593db71b8b5",
+            "label": "sand_Edge_4_1",
+            "components": [],
+            "texture": {
+                "key": "Sand Edge"
+            },
+            "x": 3312,
+            "y": 816,
+            "angle": 77
+        },
+        {
+            "type": "Image",
+            "id": "e551607e-dc1f-40e3-afab-9dfcd50db116",
+            "label": "sand_Edge_2",
+            "components": [],
+            "texture": {
+                "key": "Sand Edge"
+            },
+            "x": 464,
+            "y": 880,
+            "angle": 16
+        },
+        {
+            "type": "Image",
+            "id": "ea1bca83-341d-4776-9f99-d5e902b45a18",
+            "label": "sand_Edge_4",
+            "components": [],
+            "texture": {
+                "key": "Sand Edge"
+            },
+            "x": 2544,
+            "y": 1136,
+            "angle": 15
+        },
+        {
+            "type": "Image",
+            "id": "5ee6f1a2-493f-470a-9b4f-85993b0e935f",
+            "label": "sand_Edge_1",
+            "components": [],
+            "texture": {
+                "key": "Sand Edge"
+            },
+            "x": -544,
+            "y": 1072,
+            "angle": 6
+        },
+        {
+            "type": "Image",
+            "id": "bb1be5f1-2d37-4fe4-a263-70f78fb93f2a",
+            "label": "grass_Full",
+            "components": [],
+            "texture": {
+                "key": "Grass Full"
+            },
+            "x": -576,
+            "y": -368
+        },
+        {
+            "type": "Image",
+            "id": "98c4abee-c85d-41a2-8391-fc3fb4703a7f",
+            "label": "grass_Full_1",
+            "components": [],
+            "texture": {
+                "key": "Grass Full"
+            },
+            "x": 1296,
+            "y": -336
+        },
+        {
+            "type": "Image",
+            "id": "cc967bd6-ef54-4f95-aec8-b1e89e74d9b0",
+            "label": "grass_Full_1_1",
+            "components": [],
+            "texture": {
+                "key": "Grass Full"
+            },
+            "x": 1312,
+            "y": -1328
+        },
+        {
+            "type": "Image",
+            "id": "4dd6cfa1-b84c-48b1-a091-e07f92208335",
+            "label": "grass_Full_1_2",
+            "components": [],
+            "texture": {
+                "key": "Grass Full"
+            },
+            "x": -608,
+            "y": -1376
+        },
+        {
+            "type": "Image",
+            "id": "a4233bfa-cb1a-4fb6-9365-ae0ac269b0c8",
+            "label": "grass_Full_1_3",
+            "components": [],
+            "texture": {
+                "key": "Grass Full"
+            },
+            "x": 2464,
+            "y": -1360
+        },
+        {
+            "type": "Image",
+            "id": "4db0fac7-053d-4055-8378-4aef290e6b95",
+            "label": "grass_Full_1_4",
+            "components": [],
+            "texture": {
+                "key": "Grass Full"
+            },
+            "x": 2480,
+            "y": -2352
+        },
+        {
+            "type": "Image",
+            "id": "300ae57d-e1bc-43d7-95c3-1623550fd87d",
+            "label": "grass_Full_1_5",
+            "components": [],
+            "texture": {
+                "key": "Grass Full"
+            },
+            "x": 688,
+            "y": -2352
+        },
+        {
+            "type": "Image",
+            "id": "59b3db7e-2d9f-4c7a-9b95-cc3f0a278d34",
+            "label": "grass_Full_1_6",
+            "components": [],
+            "texture": {
+                "key": "Grass Full"
+            },
+            "x": -624,
+            "y": -2352
+        },
+        {
+            "type": "Image",
+            "id": "9de9868c-ebc1-4fcf-be20-f58be8bce8d7",
+            "label": "grass_Edge_3_1_1_1_1",
+            "components": [],
+            "texture": {
+                "key": "Grass Edge"
+            },
+            "x": -1312,
+            "y": -320,
+            "angle": 82
+        },
+        {
+            "type": "Image",
+            "id": "5cbf9f8d-9901-4fa1-b498-cd0dae1afea2",
+            "label": "grass_Edge_3_1",
+            "components": [],
+            "texture": {
+                "key": "Grass Edge"
+            },
+            "x": 2880,
+            "y": -288,
+            "angle": -42
+        },
+        {
+            "type": "Image",
+            "id": "1780c16a-94ac-4fe5-8fe7-aee29d430ec8",
+            "label": "grass_Edge_3_1_1",
+            "components": [],
+            "texture": {
+                "key": "Grass Edge"
+            },
+            "x": 2160,
+            "y": -736,
+            "angle": 22
+        },
+        {
+            "type": "Image",
+            "id": "e57547ca-7782-4f65-9a6a-644d1f68d85e",
+            "label": "grass_Edge_3_1_2",
+            "components": [],
+            "texture": {
+                "key": "Grass Edge"
+            },
+            "x": 112,
+            "y": -1408,
+            "angle": 35
+        },
+        {
+            "type": "Image",
+            "id": "11950639-774d-473f-b858-ef1d5bb1ce36",
+            "label": "grass_Edge_3_1_2_1",
+            "components": [],
+            "texture": {
+                "key": "Grass Edge"
+            },
+            "x": 1632,
+            "y": -2048,
+            "angle": 2
+        },
+        {
+            "type": "Image",
+            "id": "8650fad5-3866-491d-8447-4244641de8b4",
+            "label": "grass_Edge_3_1_1_1",
+            "components": [],
+            "texture": {
+                "key": "Grass Edge"
+            },
+            "x": -1184,
+            "y": -960,
+            "angle": 22
+        },
+        {
+            "type": "Image",
+            "id": "09f81339-48ba-40cc-abd7-27c465eea5e5",
+            "label": "grass_Edge",
+            "components": [],
+            "texture": {
+                "key": "Grass Edge"
+            },
+            "x": -832,
+            "y": 320
+        },
+        {
+            "type": "Image",
+            "id": "9bd8a4eb-36be-4829-935a-9e249da23c4e",
+            "label": "grass_Edge_3",
+            "components": [],
+            "texture": {
+                "key": "Grass Edge"
+            },
+            "x": 2096,
+            "y": 352
+        },
+        {
+            "type": "Image",
+            "id": "c003739e-4d16-4ef6-ad2d-a928a598d071",
+            "label": "grass_Edge_2",
+            "components": [],
+            "texture": {
+                "key": "Grass Edge"
+            },
+            "x": 1152,
+            "y": 304,
+            "angle": 22
+        },
+        {
+            "type": "Image",
+            "id": "e2d3556f-c3cc-42b0-8f40-36a8582f376e",
+            "label": "grass_Edge_1",
+            "components": [],
+            "texture": {
+                "key": "Grass Edge"
+            },
+            "x": 128,
+            "y": 32,
+            "angle": -173
+        },
+        {
+            "type": "Image",
+            "id": "474a1f6d-ce36-4ec5-91c1-c5b77725fe1e",
+            "label": "pebbles_1",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-1"
+            },
+            "x": 110,
+            "y": 475
+        },
+        {
+            "type": "Image",
+            "id": "51800900-e976-4099-9963-60bda197cf6a",
+            "label": "pebbles_2",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": 57,
+            "y": 521
+        },
+        {
+            "type": "Image",
+            "id": "d58792cd-88d1-467c-856c-5cdca20bc2c9",
+            "label": "pebbles_2_1",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": -405,
+            "y": 737
+        },
+        {
+            "type": "Image",
+            "id": "5bb621c9-0dfb-4fcf-9fdd-e1409b098478",
+            "label": "pebbles_2_2",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": -622,
+            "y": 565
+        },
+        {
+            "type": "Image",
+            "id": "8dc4c842-527d-45c4-90bf-ce67bf3155ea",
+            "label": "pebbles_1_2",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-1"
+            },
+            "x": 1037,
+            "y": 595,
+            "angle": 32
+        },
+        {
+            "type": "Image",
+            "id": "61e78761-627d-4b70-9163-311c91f42972",
+            "label": "pebbles_2_3",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": 1049,
+            "y": 663,
+            "angle": 21
+        },
+        {
+            "type": "Image",
+            "id": "7e492c27-91fb-4777-a2dc-57da40a1aaef",
+            "label": "pebbles_2_4",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": 717,
+            "y": 615,
+            "angle": 48
+        },
+        {
+            "type": "Image",
+            "id": "e9c8a731-52dc-4e97-a0e2-67afb6e81e12",
+            "label": "pebbles_2_5",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": 1266,
+            "y": 853
+        },
+        {
+            "type": "Image",
+            "id": "16886feb-3e36-45d6-ab3d-3a955005577f",
+            "label": "pebbles_2_6",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": 1724,
+            "y": 949
+        },
+        {
+            "type": "Image",
+            "id": "fb09148f-5d68-4ba7-a463-523da53a0ce7",
+            "label": "pebbles_2_7",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": 1657,
+            "y": 854,
+            "angle": 35
+        },
+        {
+            "type": "Image",
+            "id": "1c4d1bed-9e06-4a70-b62b-b58654a9adb2",
+            "label": "pebbles_2_8",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": -842,
+            "y": 900
+        },
+        {
+            "type": "Image",
+            "id": "5508c606-2049-4447-8882-63ddb4976c27",
+            "label": "pebbles_1_3",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-1"
+            },
+            "x": -1393,
+            "y": 700
+        },
+        {
+            "type": "Image",
+            "id": "0ba6fe54-4ea8-46d9-a665-f6d4182c6609",
+            "label": "pebbles_2_9",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": -1537,
+            "y": 649,
+            "angle": 22
+        },
+        {
+            "type": "Image",
+            "id": "accd02ff-ebeb-493f-991c-719546644cdb",
+            "label": "pebbles_2_10",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": -1328,
+            "y": 847,
+            "angle": 63
+        },
+        {
+            "type": "Image",
+            "id": "6736faca-7eca-498f-b733-c4253a6565ee",
+            "label": "pebbles_2_11",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": -617,
+            "y": 424,
+            "angle": 80
+        },
+        {
+            "type": "Image",
+            "id": "89b0c3d5-1210-4aeb-b93b-d8e99974a0db",
+            "label": "pebbles_2_12",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": -104,
+            "y": 204
+        },
+        {
+            "type": "Image",
+            "id": "9deb3660-44f9-46f9-a5da-531a956b841f",
+            "label": "pebbles_2_13",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": -320,
+            "y": 1056
+        },
+        {
+            "type": "Image",
+            "id": "08657403-3f33-4605-ad55-708cc222b5f7",
+            "label": "pebbles_2_14",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": 400,
+            "y": 1232,
+            "angle": -20
+        },
+        {
+            "type": "Image",
+            "id": "f1abaf49-7140-445e-8030-1a33f670625a",
+            "label": "pebbles_2_15",
+            "components": [],
+            "texture": {
+                "key": "Pebbles-2"
+            },
+            "x": -1040,
+            "y": 1296
+        },
+        {
+            "type": "Image",
+            "id": "96934668-ad5f-4ca8-8da6-92450550a7c1",
+            "label": "shell_1",
+            "components": [],
+            "texture": {
+                "key": "Shell_1"
+            },
+            "x": 176,
+            "y": 1296,
+            "alpha": 0.8,
+            "alphaTopLeft": 0.8,
+            "alphaTopRight": 0.8,
+            "alphaBottomLeft": 0.8,
+            "alphaBottomRight": 0.8
+        },
+        {
+            "type": "Image",
+            "id": "f399e572-0d2d-463c-ab82-a8045a25918b",
+            "label": "shell_2",
+            "components": [],
+            "texture": {
+                "key": "Shell_2"
+            },
+            "x": 352,
+            "y": 1168,
+            "alpha": 0.8,
+            "alphaTopLeft": 0.8,
+            "alphaTopRight": 0.8,
+            "alphaBottomLeft": 0.8,
+            "alphaBottomRight": 0.8
+        },
+        {
+            "type": "Image",
+            "id": "d5c6b5ea-e677-4568-9d41-1da6430ff602",
+            "label": "shell_7",
+            "components": [],
+            "texture": {
+                "key": "Shell_7"
+            },
+            "x": -240,
+            "y": 992,
+            "alpha": 0.8,
+            "alphaTopLeft": 0.8,
+            "alphaTopRight": 0.8,
+            "alphaBottomLeft": 0.8,
+            "alphaBottomRight": 0.8
+        },
+        {
+            "type": "Image",
+            "id": "813a39f2-edad-49e4-a202-b43d4b25e029",
+            "label": "shell_10",
+            "components": [],
+            "texture": {
+                "key": "Shell_10"
+            },
+            "x": 1344,
+            "y": 1088,
+            "alpha": 0.8,
+            "alphaTopLeft": 0.8,
+            "alphaTopRight": 0.8,
+            "alphaBottomLeft": 0.8,
+            "alphaBottomRight": 0.8
+        },
+        {
+            "type": "Image",
+            "id": "b7d6d501-43ac-4c02-8dcf-b518708e0fd0",
+            "label": "shell_5",
+            "components": [],
+            "texture": {
+                "key": "Shell_5"
+            },
+            "x": -1040,
+            "y": 1264,
+            "alpha": 0.8,
+            "alphaTopLeft": 0.8,
+            "alphaTopRight": 0.8,
+            "alphaBottomLeft": 0.8,
+            "alphaBottomRight": 0.8
+        },
+        {
+            "type": "Sprite",
+            "id": "685929e9-5398-4a47-af7c-48bf4994da02",
+            "label": "player",
+            "scope": "PUBLIC",
+            "components": [
+                "Test",
+                "Physics",
+                "User_Movement",
+                "DepthSort"
+            ],
+            "Physics.autoSize": "Custom",
+            "Physics.bwidth": 1100,
+            "Physics.bheight": 600,
+            "Physics.byOffset": 450,
+            "texture": {
+                "key": "dbmx2dt-7e7c10c2-637f-41c7-8d95-0295afa8abd8"
+            },
+            "x": 419,
+            "y": 436,
+            "scaleX": 0.12719397278844025,
+            "scaleY": 0.12719397278844025
+        },
+        {
+            "type": "Image",
+            "id": "67bfa62a-9156-46a1-91fe-8747afe4eb99",
+            "label": "r_Shadow_2_4",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-2"
+            },
+            "x": 2592,
+            "y": 304
+        },
+        {
+            "type": "Image",
+            "id": "09ad8d37-ef33-4a95-a5f8-4eb4964c715c",
+            "label": "r_Shadow_2_4_1",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-2"
+            },
+            "x": 1776,
+            "y": -480
+        },
+        {
+            "type": "Image",
+            "id": "e1a22822-0cd2-4305-877b-987407d5100e",
+            "label": "r_Shadow_1_3",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-1"
+            },
+            "x": 2352,
+            "y": -128
+        },
+        {
+            "type": "Image",
+            "id": "3457955f-7d6f-41f2-80fb-3f877870d04f",
+            "label": "r_Shadow_1_3_1",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-1"
+            },
+            "x": -1216,
+            "y": -336
+        },
+        {
+            "type": "Image",
+            "id": "fcf62710-29b0-4f14-b3f3-b8fb3b5aee16",
+            "label": "r_Shadow_1",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-1"
+            },
+            "x": 1632,
+            "y": 1024
+        },
+        {
+            "type": "Image",
+            "id": "3bea3069-5cd6-4954-b1fe-96160934d33c",
+            "label": "r_Shadow_1_1",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-1"
+            },
+            "x": 417,
+            "y": 735
+        },
+        {
+            "type": "Image",
+            "id": "dd92d9f6-106e-46bf-95d9-e1824987bc0b",
+            "label": "r_Shadow_1_2",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-1"
+            },
+            "x": -624,
+            "y": 1009
+        },
+        {
+            "type": "Image",
+            "id": "7e98e2ff-16d1-4b37-845a-dd8d083658ab",
+            "label": "r_Shadow_2_1",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-2"
+            },
+            "x": -632,
+            "y": 79
+        },
+        {
+            "type": "Image",
+            "id": "05519dfb-e0e0-487b-87eb-ee75126f5653",
+            "label": "r_Shadow_2",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-2"
+            },
+            "x": -1091,
+            "y": 763
+        },
+        {
+            "type": "Image",
+            "id": "fdb485bb-8035-4783-bb8b-ce4894acbc91",
+            "label": "r_Shadow_2_2",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-2"
+            },
+            "x": 1417,
+            "y": 308
+        },
+        {
+            "type": "Image",
+            "id": "5179c35f-029d-443c-bd06-2ada9152043d",
+            "label": "r_Shadow_2_3",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-2"
+            },
+            "x": 1940,
+            "y": 690
+        },
+        {
+            "type": "Image",
+            "id": "b0d13c95-df2d-4d3f-a35f-406cbc8fbad1",
+            "label": "r_Shadow_4",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-4"
+            },
+            "x": -323,
+            "y": 720
+        },
+        {
+            "type": "Image",
+            "id": "6e7bb5d8-c996-43f6-84e1-1d6e69a04740",
+            "label": "r_Shadow_4_1",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-4"
+            },
+            "x": -1384,
+            "y": 660
+        },
+        {
+            "type": "Image",
+            "id": "e1010c04-38e1-43a0-b8f1-9b35a5741023",
+            "label": "r_Shadow_4_2",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-4"
+            },
+            "x": -1178,
+            "y": 620
+        },
+        {
+            "type": "Image",
+            "id": "cff2de1c-6966-4faa-a596-cf1c30659e95",
+            "label": "r_Shadow_4_3",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-4"
+            },
+            "x": -859,
+            "y": 881
+        },
+        {
+            "type": "Image",
+            "id": "a2d4c416-d415-4674-abe3-dd23c89451be",
+            "label": "r_Shadow_3",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-3"
+            },
+            "x": -1047,
+            "y": 857
+        },
+        {
+            "type": "Image",
+            "id": "5d91308b-e8e8-41bb-bcd1-e0ccc0abc8e3",
+            "label": "r_Shadow_3_1",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-3"
+            },
+            "x": -983,
+            "y": 701
+        },
+        {
+            "type": "Image",
+            "id": "876d1dd8-fd69-47c0-8e89-90eb75a1c2a6",
+            "label": "r_Shadow_3_2",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-3"
+            },
+            "x": 1255,
+            "y": 793
+        },
+        {
+            "type": "Image",
+            "id": "7d31f0e2-7373-4897-a9b9-661b72cc853b",
+            "label": "r_Shadow_3_3",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-3"
+            },
+            "x": 1809,
+            "y": 609
+        },
+        {
+            "type": "Image",
+            "id": "45e261a6-7916-4f52-bde7-649cf31c1eb0",
+            "label": "r_Shadow_4_4",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-4"
+            },
+            "x": 1586,
+            "y": 692
+        },
+        {
+            "type": "Image",
+            "id": "409f085d-a2a3-4302-9f2f-f3c8ad63dccf",
+            "label": "r_Shadow_4_5",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-4"
+            },
+            "x": 1098,
+            "y": 619
+        },
+        {
+            "type": "Image",
+            "id": "c1d73121-8cd3-4470-9bed-ffe6fd228301",
+            "label": "r_Shadow_4_6",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-4"
+            },
+            "x": 1977,
+            "y": 525
+        },
+        {
+            "type": "Image",
+            "id": "d638f4ec-37e9-4113-9c01-7d8d1609e66a",
+            "label": "r_Shadow_3_4",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-3"
+            },
+            "x": 1596,
+            "y": 855
+        },
+        {
+            "type": "Image",
+            "id": "f37524f6-580b-4fbc-a819-bde9e0af6a02",
+            "label": "r_Shadow_3_5",
+            "components": [],
+            "texture": {
+                "key": "R-Shadow-3"
+            },
+            "x": 1034,
+            "y": 550
+        },
+        {
+            "type": "Image",
+            "id": "e7770b1a-b8e4-4787-aabf-690a309a8038",
+            "label": "r_Bush_1",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-1"
+            },
+            "x": -1039,
+            "y": 774
+        },
+        {
+            "type": "Image",
+            "id": "1f49c145-a1fb-461c-bf0a-92eb1eb5b942",
+            "label": "r_Bush_1_6",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-1"
+            },
+            "x": 1198,
+            "y": 366
+        },
+        {
+            "type": "Image",
+            "id": "b7d4206a-409d-4dd5-adb1-05287669d979",
+            "label": "r_Bush_1_2",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-1"
+            },
+            "x": -989,
+            "y": 614
+        },
+        {
+            "type": "Image",
+            "id": "20a8f879-0af5-4ee8-9131-f3740e162640",
+            "label": "r_Bush_1_7",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-1"
+            },
+            "x": 1375,
+            "y": 524
+        },
+        {
+            "type": "Image",
+            "id": "e9304fa8-38fb-45ba-b11f-05084bbf02e0",
+            "label": "r_Bush_2_6",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-2"
+            },
+            "x": 1634,
+            "y": 414
+        },
+        {
+            "type": "Image",
+            "id": "2b40852c-db39-4d1a-b232-7eb33a790be8",
+            "label": "r_Bush_1_3",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-1"
+            },
+            "x": -1277,
+            "y": 435
+        },
+        {
+            "type": "Image",
+            "id": "22c6643b-10fe-4a94-bc28-115addf1fb6a",
+            "label": "r_Bush_1_4",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-1"
+            },
+            "x": 1282,
+            "y": 714
+        },
+        {
+            "type": "Image",
+            "id": "f010205d-8686-425f-a846-fcc0d704cd82",
+            "label": "r_Tree_1_2_1",
+            "components": [
+                "Physics",
+                "DepthSort"
+            ],
+            "Physics.static": true,
+            "Physics.autoSize": "Custom",
+            "Physics.bwidth": 85,
+            "Physics.bheight": 85,
+            "Physics.bxOffset": 20,
+            "Physics.byOffset": 310,
+            "DepthSort.offset": 310,
+            "texture": {
+                "key": "R-Tree-1"
+            },
+            "x": 2080,
+            "y": -656
+        },
+        {
+            "type": "Image",
+            "id": "da5632a2-e31c-49c4-b9e0-207741ec5715",
+            "label": "r_Tree_1_2_2",
+            "components": [
+                "Physics",
+                "DepthSort"
+            ],
+            "Physics.static": true,
+            "Physics.autoSize": "Custom",
+            "Physics.bwidth": 85,
+            "Physics.bheight": 85,
+            "Physics.bxOffset": 20,
+            "Physics.byOffset": 310,
+            "DepthSort.offset": 310,
+            "texture": {
+                "key": "R-Tree-1"
+            },
+            "x": -1488,
+            "y": -864
+        },
+        {
+            "type": "Image",
+            "id": "2210eeb4-48ef-43d2-a7cd-1981bc2cf32f",
+            "label": "r_Tree_2_2_1",
+            "components": [
+                "Physics",
+                "DepthSort"
+            ],
+            "Physics.static": true,
+            "Physics.autoSize": "Custom",
+            "Physics.bwidth": 85,
+            "Physics.bheight": 85,
+            "Physics.bxOffset": 20,
+            "Physics.byOffset": 310,
+            "DepthSort.offset": 310,
+            "texture": {
+                "key": "R-Tree-2"
+            },
+            "x": 1552,
+            "y": -976
+        },
+        {
+            "type": "Image",
+            "id": "820ea5dd-6af0-45be-a000-3e5931ad79e7",
+            "label": "r_Tree_2_2_2",
+            "components": [
+                "Physics",
+                "DepthSort"
+            ],
+            "Physics.static": true,
+            "Physics.autoSize": "Custom",
+            "Physics.bwidth": 85,
+            "Physics.bheight": 85,
+            "Physics.bxOffset": 20,
+            "Physics.byOffset": 310,
+            "DepthSort.offset": 310,
+            "texture": {
+                "key": "R-Tree-2"
+            },
+            "x": 2368,
+            "y": -192
+        },
+        {
+            "type": "Image",
+            "id": "8bd98808-5a31-4ab0-b57e-a34af1180f8c",
+            "label": "r_Tree_2_3",
+            "components": [
+                "Physics",
+                "DepthSort"
+            ],
+            "Physics.static": true,
+            "Physics.autoSize": "Custom",
+            "Physics.bwidth": 85,
+            "Physics.bheight": 85,
+            "Physics.bxOffset": 20,
+            "Physics.byOffset": 310,
+            "DepthSort.offset": 310,
+            "DepthSort.force": true,
+            "texture": {
+                "key": "R-Tree-2"
+            },
+            "x": -855,
+            "y": -429
+        },
+        {
+            "type": "Image",
+            "id": "51b7a62d-21a4-47bd-b0ac-aa66b8d792e6",
+            "label": "r_Tree_2_1",
+            "components": [
+                "Physics",
+                "DepthSort"
+            ],
+            "Physics.static": true,
+            "Physics.autoSize": "Custom",
+            "Physics.bwidth": 85,
+            "Physics.bheight": 85,
+            "Physics.bxOffset": 20,
+            "Physics.byOffset": 310,
+            "DepthSort.offset": 310,
+            "texture": {
+                "key": "R-Tree-2"
+            },
+            "x": 1195,
+            "y": -192
+        },
+        {
+            "type": "Image",
+            "id": "b91d7f57-9e21-4cc0-aa29-c96d1da8ad1c",
+            "label": "r_Bush_1_9",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-1"
+            },
+            "x": 1050,
+            "y": 462
+        },
+        {
+            "type": "Image",
+            "id": "19754f60-4a64-48bf-9795-99582f9c2a63",
+            "label": "r_Bush_2_5",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-2"
+            },
+            "x": 1085,
+            "y": 543
+        },
+        {
+            "type": "Image",
+            "id": "7556902f-9d36-4f08-a863-398a3e9f3b53",
+            "label": "r_Bush_2_8",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-2"
+            },
+            "x": 1545,
+            "y": 614
+        },
+        {
+            "type": "Image",
+            "id": "3f708e43-b398-45cc-8a1c-716ac1281bd9",
+            "label": "r_Tree_2",
+            "components": [
+                "Physics",
+                "DepthSort"
+            ],
+            "Physics.static": true,
+            "Physics.autoSize": "Custom",
+            "Physics.bwidth": 85,
+            "Physics.bheight": 85,
+            "Physics.bxOffset": 20,
+            "Physics.byOffset": 310,
+            "DepthSort.offset": 310,
+            "texture": {
+                "key": "R-Tree-2"
+            },
+            "x": 1712,
+            "y": 186
+        },
+        {
+            "type": "Image",
+            "id": "6a3b260b-c1dd-4e76-9921-272501223c0f",
+            "label": "r_Tree_2_2",
+            "components": [
+                "Physics",
+                "DepthSort"
+            ],
+            "Physics.static": true,
+            "Physics.autoSize": "Custom",
+            "Physics.bwidth": 85,
+            "Physics.bheight": 85,
+            "Physics.bxOffset": 20,
+            "Physics.byOffset": 310,
+            "DepthSort.offset": 310,
+            "texture": {
+                "key": "R-Tree-2"
+            },
+            "x": -1313,
+            "y": 261
+        },
+        {
+            "type": "Image",
+            "id": "39a93674-c4db-401c-b584-0643974ccda5",
+            "label": "r_Tree_1",
+            "components": [
+                "Physics",
+                "DepthSort"
+            ],
+            "Physics.static": true,
+            "Physics.autoSize": "Custom",
+            "Physics.bwidth": 85,
+            "Physics.bheight": 85,
+            "Physics.bxOffset": 21,
+            "Physics.byOffset": 310,
+            "DepthSort.offset": 310,
+            "texture": {
+                "key": "R-Tree-1"
+            },
+            "x": 1362,
+            "y": 492
+        },
+        {
+            "type": "Image",
+            "id": "529d0ea2-f557-4229-8f0d-c49e6e846d2c",
+            "label": "r_Tree_1_1",
+            "components": [
+                "Physics",
+                "DepthSort"
+            ],
+            "Physics.static": true,
+            "Physics.autoSize": "Custom",
+            "Physics.bwidth": 85,
+            "Physics.bheight": 85,
+            "Physics.bxOffset": 20,
+            "Physics.byOffset": 310,
+            "DepthSort.offset": 310,
+            "texture": {
+                "key": "R-Tree-1"
+            },
+            "x": 145,
+            "y": 207
+        },
+        {
+            "type": "Image",
+            "id": "23de188b-b810-4d96-bf25-c3a2c24cb02b",
+            "label": "r_Bush_1_1",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-1"
+            },
+            "x": -814,
+            "y": 740
+        },
+        {
+            "type": "Image",
+            "id": "b5bb6a9f-92ea-452f-98af-916f0bcc1c03",
+            "label": "r_Tree_1_2",
+            "components": [
+                "Physics",
+                "DepthSort"
+            ],
+            "Physics.static": true,
+            "Physics.autoSize": "Custom",
+            "Physics.bwidth": 85,
+            "Physics.bheight": 85,
+            "Physics.bxOffset": 20,
+            "Physics.byOffset": 310,
+            "DepthSort.offset": 310,
+            "texture": {
+                "key": "R-Tree-1"
+            },
+            "x": -887,
+            "y": 474
+        },
+        {
+            "type": "Image",
+            "id": "5c994a04-b2fc-42f1-97d5-b2eb6e657649",
+            "label": "r_Bush_2",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-2"
+            },
+            "x": -895,
+            "y": 812
+        },
+        {
+            "type": "Image",
+            "id": "4f87f123-7c22-41b6-8f3d-e17d8737b237",
+            "label": "r_Shadow_2_Mask",
+            "components": [
+                "DepthSort"
+            ],
+            "DepthSort.force": true,
+            "DepthSort.exact": 10000,
+            "texture": {
+                "key": "R-Shadow-2 Mask"
+            },
+            "x": -1087,
+            "y": 765,
+            "visible": false
+        },
+        {
+            "type": "Image",
+            "id": "a628ab30-01d9-4b72-a0bb-9d7db541dbff",
+            "label": "r_Shadow_2_Mask_1",
+            "components": [
+                "DepthSort"
+            ],
+            "DepthSort.force": true,
+            "DepthSort.exact": 10000,
+            "texture": {
+                "key": "R-Shadow-2 Mask"
+            },
+            "x": -630,
+            "y": 80,
+            "visible": false
+        },
+        {
+            "type": "Image",
+            "id": "5eab2a63-17c8-4ed5-915c-f0ad8656c2f2",
+            "label": "r_Bush_2_7",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-2"
+            },
+            "x": 1938,
+            "y": 458
+        },
+        {
+            "type": "Image",
+            "id": "5f4ff1d6-a3e4-4ede-96da-78309859bf30",
+            "label": "r_Shadow_2_Mask_2",
+            "components": [
+                "DepthSort"
+            ],
+            "DepthSort.force": true,
+            "DepthSort.exact": 10000,
+            "texture": {
+                "key": "R-Shadow-2 Mask"
+            },
+            "x": 1938,
+            "y": 694,
+            "visible": false
+        },
+        {
+            "type": "Image",
+            "id": "68682a08-d9a1-42b2-a048-b6db9bf42d1c",
+            "label": "r_Bush_2_1",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-2"
+            },
+            "x": -1423,
+            "y": 597
+        },
+        {
+            "type": "Image",
+            "id": "763ed800-afda-4cbd-8447-8b04569843ba",
+            "label": "r_Bush_2_2",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-2"
+            },
+            "x": -1219,
+            "y": 591
+        },
+        {
+            "type": "Image",
+            "id": "1e1b2b17-bd63-4085-b54a-5c0c976ba34e",
+            "label": "r_Bush_1_8",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-1"
+            },
+            "x": 1818,
+            "y": 530
+        },
+        {
+            "type": "Image",
+            "id": "00d60272-3af8-488a-a277-2ba07bdf162c",
+            "label": "r_Bush_2_3",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-2"
+            },
+            "x": -362,
+            "y": 653
+        },
+        {
+            "type": "Image",
+            "id": "51967b10-88d8-40bf-8977-ce291609f66c",
+            "label": "r_Bush_1_5",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-1"
+            },
+            "x": 1592,
+            "y": 782
+        },
+        {
+            "type": "Image",
+            "id": "17d850d2-bc03-4dd1-bfe1-79335bdeb5a4",
+            "label": "r_Bush_2_4",
+            "components": [
+                "DepthSort"
+            ],
+            "texture": {
+                "key": "R-Bush-2"
+            },
+            "x": 1419,
+            "y": 908
+        },
+        {
+            "type": "Rectangle",
+            "id": "d78b337a-d396-4bcd-ab75-42a08860c038",
+            "label": "barrier",
+            "components": [
+                "Physics"
+            ],
+            "Physics.static": true,
+            "x": 160,
+            "y": 2224,
+            "scaleX": 60.317694936308186,
+            "scaleY": 1.4724738925515288,
+            "visible": false,
+            "isFilled": true,
+            "fillColor": "#e01919",
+            "lineWidth": 2,
+            "width": 128,
+            "height": 128
+        },
+        {
+            "type": "Rectangle",
+            "id": "c96676c5-3d4d-4525-bf12-d6be0bcfedf4",
+            "label": "barrier_1",
+            "components": [
+                "Physics"
+            ],
+            "Physics.static": true,
+            "x": -3328,
+            "y": 96,
+            "scaleX": 1.651475143727445,
+            "scaleY": 39.15240615252361,
+            "visible": false,
+            "isFilled": true,
+            "fillColor": "#e01919",
+            "lineWidth": 2,
+            "width": 128,
+            "height": 128
+        },
+        {
+            "type": "Rectangle",
+            "id": "4a5de64e-d240-4417-a049-1a638b39ab10",
+            "label": "barrier_1_1",
+            "components": [
+                "Physics"
+            ],
+            "Physics.static": true,
+            "x": 3504,
+            "y": 96,
+            "scaleX": 1.651475143727445,
+            "scaleY": 39.15240615252361,
+            "visible": false,
+            "isFilled": true,
+            "fillColor": "#e01919",
+            "lineWidth": 2,
+            "width": 128,
+            "height": 128
+        },
+        {
+            "type": "Rectangle",
+            "id": "41a4b1b4-5a1e-4cc7-9508-42878fac4aec",
+            "label": "barrier_2",
+            "components": [
+                "Physics"
+            ],
+            "Physics.static": true,
+            "x": 208,
+            "y": -1824,
+            "scaleX": 60.317694936308186,
+            "scaleY": 1.4724738925515288,
+            "visible": false,
+            "isFilled": true,
+            "fillColor": "#e01919",
+            "lineWidth": 2,
+            "width": 128,
+            "height": 128
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    },
+    "lists": [
+        {
+            "id": "74ea9fb4-0b8e-4d16-a6a9-622a30c7e720",
+            "label": "trees",
+            "objectIds": [
+                "aed7a041-fc1a-4f5c-8ebc-e4fcb9104ea8",
+                "39a93674-c4db-401c-b584-0643974ccda5",
+                "b5bb6a9f-92ea-452f-98af-916f0bcc1c03",
+                "529d0ea2-f557-4229-8f0d-c49e6e846d2c",
+                "6a3b260b-c1dd-4e76-9921-272501223c0f",
+                "8bd98808-5a31-4ab0-b57e-a34af1180f8c",
+                "3f708e43-b398-45cc-8a1c-716ac1281bd9",
+                "51b7a62d-21a4-47bd-b0ac-aa66b8d792e6",
+                "820ea5dd-6af0-45be-a000-3e5931ad79e7",
+                "f010205d-8686-425f-a846-fcc0d704cd82",
+                "2210eeb4-48ef-43d2-a7cd-1981bc2cf32f",
+                "da5632a2-e31c-49c4-b9e0-207741ec5715"
+            ]
+        },
+        {
+            "id": "dade06ab-32c2-40d1-8293-15fa6fc579ed",
+            "label": "shadow_masks"
+        },
+        {
+            "id": "b4afe07b-8e55-4511-8b93-c2359f676fb0",
+            "label": "barriers",
+            "objectIds": [
+                "d78b337a-d396-4bcd-ab75-42a08860c038",
+                "c96676c5-3d4d-4525-bf12-d6be0bcfedf4",
+                "4a5de64e-d240-4417-a049-1a638b39ab10",
+                "41a4b1b4-5a1e-4cc7-9508-42878fac4aec"
+            ]
+        },
+        {
+            "id": "f96f82ae-271f-45be-8862-d281bb0bb0ff",
+            "label": "waves"
+        }
+    ]
+}
