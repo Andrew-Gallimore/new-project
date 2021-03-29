@@ -1,0 +1,106 @@
+{
+    "anims": [
+        {
+            "key": "Left_Idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Idle_Left_2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Idle_Left_1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 2,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "repeatDelay": 1
+        },
+        {
+            "key": "Left_Walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Walk_Left_1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Walk_Left_2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Walk_Left_3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Walk_Left_4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 8,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "Right_Idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Idle_Right_2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Idle_Right_1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 1,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "Right_Walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Walk_Right_1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Walk_Right_2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Walk_Right_3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Walk_Right_4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 8,
+            "skipMissedFrames": true,
+            "repeat": -1
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    }
+}

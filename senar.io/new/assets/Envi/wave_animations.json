@@ -1,0 +1,52 @@
+{
+    "anims": [
+        {
+            "key": "Top",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Ocian_Foam-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Ocian_Foam-1.2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Ocian_Foam-1.3",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 5,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "Bottom",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Ocian_Foam-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Ocian_Foam-2.2",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 3,
+            "skipMissedFrames": true,
+            "repeat": -1
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    }
+}

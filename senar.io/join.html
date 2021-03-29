@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    
+    <title>Senario Mini-Games</title>
+    <link rel="icon" type="image/png" href="/senar.io/Uni/Favicon.png" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+    <script async src="//cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js" onload="initFingerprintJS()" ></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant&family=Gabriela&display=swap" rel="stylesheet">
+    <script defer onload="formSetup();" src="https://www.gstatic.com/firebasejs/8.2.4/firebase.js"></script>
+</head>
+<style>
+    * {
+        margin: 0 0;
+        padding: 0 0;
+    }
+
+    button,
+    input[type="submit"],
+    input[type="reset"],
+    input[type="text"],
+    input[type="password"] {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        outline: inherit;
+    }
+
+    body {
+        background: #313131;
+        font-family: 'Assistant', sans-serif;
+        font-weight: 600;
+        overflow-x: hidden;
+    }
+
+    .BGimage {
+        max-height: 150vh;
+        min-width: 100vw;
+        left: 50%;
+        transform: translate(-50%, 0);
+        position: absolute;
+    }
+    .FGimage {
+        min-height: 450px;
+        max-height: 100vh;
+        min-width: 800px;
+        max-width: 178vh;
+        width: 80%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+
+    .main {
+        height: 100vh;
+        /* width: 100%; */
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        overflow-x: hidden;
+
+        /* background: #313131; */
+        /* background-image: linear-gradient(to bottom right, #434343, #262626);
+        background-image: url("/senar.io/assets/Artwork_Island.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: relative; */
+    }
+
+    /* previous stuff */
+
+    .main .bottom {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        position: absolute;
+        bottom: 3vh;
+    }
+
+    .main .bottom h2 {
+        margin-top: 30px;
+        font-family: 'Assistant', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 300;
+        text-align: center;
+        width: 70%;
+    }
+
+    .main .bottom a {
+        margin-top: 7px;
+        border: solid #000000 1px;
+        border-radius: 7px;
+        padding: 3px 6px;
+        font-size: 1rem;
+        color: #000000;
+        font-family: 'Gabriela', serif;
+        text-decoration: none;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.672);
+        transition: 0.4s;
+    }
+    .main .bottom a:hover {
+        padding: 3px 10px;
+        transform: translateY(-2px);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.672);
+    }
+
+    .bottom2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: none;
+    }
+    .bottom2 h2 {
+        margin-top: 20px;
+        font-family: 'Gabriela', serif;
+        font-size: 2rem;
+        text-align: center;
+        width: 70%;
+        color:  #d8f13c;
+    }
+    .bottom2 h3 {
+        font-family: 'Assistant', sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        text-align: center;
+        width: max-content;
+        transform: translateX(100px) rotate(-6deg);
+        color: #e9e9e9;
+    }
+    .bottom2 button {
+        font-family: 'Assistant', sans-serif;
+        font-size: 1rem;
+        color: #22d2ff;
+        text-decoration: underline;
+    }
+
+    @media (min-aspect-ratio: 10/7) {
+        .bg1 {
+            width: auto;
+            height: 60vh;
+        }
+    }
+
+    @media (max-aspect-ratio: 10/7) {
+        .bg1 {
+            width: 110vw;
+            height: 77vw;
+        }
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+    }
+    .animate-delay {
+    -webkit-animation: animatezoom 0.6s;
+    -webkit-animation-delay: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation: animatezoom 0.6s;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+    }
+
+    @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+    }
+    @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+    }
+
+    .fade {
+    -webkit-animation: fadeing 1.5s;
+    -webkit-animation-delay: 0.7s;
+    animation: fadeing 1.5s;
+    animation-delay: 0.7s;
+    animation-fill-mode: forwards;
+    }
+
+    @-webkit-keyframes fadeing {
+    0% {opacity: 1;} 
+    99% {opacity: 0.01;}
+    100% {opacity: 0;}
+    }
+    @keyframes fadeing {
+    0% {opacity: 1;} 
+    99% {opacity: 0.01;}
+    100% {opacity: 0;}
+    }
+
+    .flash {
+    -webkit-animation: flashing 0.6s;
+    animation: flashing 0.6s;
+    }
+
+    @-webkit-keyframes flashing {
+    0% {background: none;} 
+    25% {background: red;}
+    50% {background: none;}
+    75% {background: red;}
+    100% {background: none;}
+    }
+    @keyframes flashing {
+    0% {background: none;} 
+    25% {background: red;}
+    50% {background: none;}
+    75% {background: red;}
+    100% {background: none;}
+    }
+
+    .w-12 {
+        width: 80%;
+    }
+
+    .title {
+        margin-top: 5vh;
+        height: max-content;
+        width: 100%;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .title .container-bg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .title .container-bg img {
+        width: 100%;
+        max-width: 740px;
+        height: fit-content;
+        max-height: 170px;
+    }
+
+    .search {
+        background: white;
+        position: relative;
+        /* padding: 20px; */
+        margin-bottom: 5vh;
+        margin-top: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 100%;
+        max-width: 740px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .search .container-bg {
+        position: absolute;
+    }
+    .search #form {
+        padding: 20px;
+    }
+    .search .enter-area {
+        cursor: text;
+    }
+    .search .a {
+        position: relative;
+        display: grid;
+        grid-template-columns: max-content 8% auto;
+        width: 100%;
+        height: 2rem;
+    }
+    .search .space {
+        height: 30px;
+    }
+    .search .a .enter-area i {
+        transform: translateY(-3px);
+        cursor: default;
+    }
+    .search .a .enter-area input {
+        text-transform: uppercase;
+        cursor: text;
+    }
+    .search .b {
+        position: relative;
+        display: grid;
+        grid-template-columns: 50% auto 50%;
+        width: 100%;
+        height: 2rem;
+    }
+    .search .b .area-left,
+    .search .b .area-right {
+        width: 50%;
+        display: grid;
+        grid-template-columns: max-content 8% auto;
+        width: 100%;
+        height: 2rem;
+    }
+    .search .z {
+        margin-top: 28px;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        text-align: center;
+    }
+    .search .z .text {
+        padding: 8px 20px;
+    }
+    .search .z .text {
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.501) 3px 2px 7px;
+        pointer-events: none;
+        transition: all 0.3s ease-out;
+        border: solid rgba(0, 0, 0, 0.049) 0.5px;
+    }
+    .search .z button {
+        cursor: pointer;
+    }
+    .search .z button:hover div {
+        transform: translateY(-5px);
+        box-shadow: rgba(0, 0, 0, 0.501) 5px 9px 9px;
+        border: solid rgba(0, 0, 0, 0.268) 0.5px;
+    }
+
+    .search .z #error {
+        margin-top: 10px;
+        margin-bottom: -2px;
+        display: none;
+    }
+
+    .custom {
+        width: 100%;
+        height: 100vh;
+        background: #047088;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .custom .title {
+        background: white;
+        width: 90%;
+        max-width: 740px;
+    }
+    .custom .title h1 {
+        text-align: center;
+        width: max-content;
+        margin: 20px;
+        background: coral;
+    }
+
+    @media (max-height: 560px) {
+        .search {
+            position: relative;
+            margin-top: 25vh;
+        }
+        .main {
+            height: auto;
+        }
+    }
+
+</style>
+
+<script>
+    console.log('Client: Started Javascript');
+    var socket = io();
+    var IDsent = false;
+    var user;
+    var userSelect = 1;
+    var userTotal = 0; //meaning there is one person, just slot 0
+    var pastCode;
+    function errorMessage(message) {
+        if(document.getElementById('error').style.display === '' || document.getElementById('error').style.display === "none") {
+            if(message !== undefined) {
+                var mText = message;
+            }else {
+                var mText = "Sorry, error :(";
+            }
+            document.getElementById('error').innerHTML = mText;
+            document.getElementById('error').style.display="block";
+            setTimeout(function () {
+                document.getElementById('error').style.display="none";
+            }, 2200);
+        }
+    }
+    setTimeout(function () {
+        document.getElementById('error').classList.add("fade");
+    }, 1700);
+
+    function checkform() {
+        var _supportsLocalStorage = !!window.localStorage
+        && typeof localStorage.getItem === 'function'
+        && typeof localStorage.setItem === 'function'
+        && typeof localStorage.removeItem === 'function';
+        if(!_supportsLocalStorage) {
+            alert("Uh Oh! Looks like your browser doesn't support Local Storage (Needed)");
+        }
+
+        if(document.getElementById('error').style.display === '' || document.getElementById('error').style.display === "none") {
+            var code = document.getElementById('code');
+            var ID;
+
+            if(pastCode === code.value && code.value !== "" && code.value.length < 6 && code.value != null) {
+                //If there is text, but repeated
+                errorMessage("Still not an Island :(");
+            }else if(pastCode === code.value && code.value === "") {
+                //If there is no text, and repeated
+                errorMessage("Again, enter an Island Name");
+            }else if(code.value === "") {
+                //If there is simply no text
+                errorMessage("Enter an Island Name");
+            }
+            if(code.value.length > 0 && code.value.length < 6 && code.value !== "" && code.value != null && pastCode !== code && _supportsLocalStorage) {
+                // if(localStorage.getItem('chrome:Q9fNEdb_tempKey') === null) {
+                //     ID = false;
+                // }else {
+                //     ID = Object.values(JSON.parse(localStorage.getItem('chrome:Q9fNEdb_tempKey')))[1];
+                // }
+                //console.log(localStorage.getItem('chrome:Q9fNEdb_tempKey'));
+                //console.log(Object.values(JSON.parse(localStorage.getItem('chrome:Q9fNEdb_tempKey')))[1])
+                // socket.emit('server', code.value);
+                console.log('servers-public/' + code.value.toUpperCase())
+                var serverData = firebase.database().ref('servers-public/' + code.value.toUpperCase());
+                serverData.on('value', (snapshot) => {
+                    var data = snapshot.val();
+                    //if the server returns nothing (meaning it isn't there)
+                    console.log(data)
+                    if(data == null) {
+                        errorMessage("Not an Island :(");
+                        document.querySelector(".search .z .text").classList.add("flash");
+                        setTimeout(function () {
+                            document.querySelector(".search .z .text").classList.remove("flash");
+                        }, 600);
+                    }else {
+                        socket.emit('server', code.value.toUpperCase());
+                        console.log("sent")
+                    }
+                });
+            }
+            //console.log(document.getElementById('error').style.display);
+        }
+        pastCode = code.value;
+        return false;
+    }
+    socket.on('serverReturn', function(data) {
+        console.log("returned")
+        storeItem('chrome:Q9fNEdb_tempKey', {
+            5977398352: data,
+            0462107376: new Date().getTime(),
+        });
+
+        if(document.getElementById("name").value !== "" && document.getElementById("username").value !== "") {
+            //yes yes
+            storeItem('lastUser', {
+                name: document.getElementById("name").value, 
+                username: document.getElementById("username").value
+            });
+        }else if(document.getElementById("name").value !== "" && document.getElementById("username").value === "") {
+            //yes no
+            storeItem('lastUser', {
+                name: document.getElementById("name").value, 
+                username: 'Guest'
+            });
+        }else if(document.getElementById("name").value === "" && document.getElementById("username").value !== "") {
+            //no yes
+            storeItem('lastUser', {
+                name: 'Not-Defined', 
+                username: document.getElementById("username").value
+            });
+        }else if(document.getElementById("name").value === "" && document.getElementById("username").value === "") {
+            //no no
+            storeItem('lastUser', {
+                name: 'Not-Defined', 
+                username: 'Guest'
+            });
+        }
+        console.log("User: " + Object.values(JSON.parse(localStorage.getItem('lastUser')))[0])
+        console.log("Username: " + Object.values(JSON.parse(localStorage.getItem('lastUser')))[1])
+        window.open('senar.io/new/index.html', '_blank');
+        console.log("Sent user to server...")
+    });
+    
+
+    //hideing the sign in pop up if you click outside the sign in pop up
+    function hide() {
+        var modal = document.querySelector('#sign-in_wrapper');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    //getting my socket id
+    var socketID;
+    socket.on('connect', function () {
+        socketID = socket.id;
+        console.log('Server: You have a socket ID registered');
+    });
+
+    //reciveing server message
+    socket.on('serverMsg', function (data) {
+        console.log('Server: ' + data.msg);
+    });
+
+    //setting up user data from auto log in
+    socket.on('userData', function (data) {
+        // document.querySelector(".bottom").style.display="none";
+        // document.querySelector(".bottom2").style.display="flex";
+        // document.querySelector(".bottom2 h2").innerHTML = data[userSelect].fname + " " + data[userSelect].lname.charAt(0).toUpperCase() + ". !";
+        // document.querySelector(".bottom2 h3").innerHTML = "(" + data[userSelect].username + ")";
+        user = data;
+    });
+    //if your auto log in failed
+    socket.on('userFail', function () { 
+        console.log("Auto Log in failed (from server) ID: " + encript + condencer);
+        document.querySelector(".bottom2").style.display="none";
+        document.querySelector(".bottom").style.display="flex";
+        user = false;
+    });
+
+    //this is all code that fixes the view height going wonky when in mobile keybord
+    var pageInPortraintMode;
+    window.addEventListener("resize", windowSizeChanged);
+    addEventListener("load", function () {
+        pageInPortraintMode = window.innerHeight > window.innerWidth;
+        document.getElementById("viewport").setAttribute("content", "width=" + window.innerWidth + ", height=" + window.innerHeight + ", initial-scale=1.0, maximum-scale=1.0, user-scalable=0");
+    })
+    function windowSizeChanged() {
+        if (((pageInPortraintMode === true) && (window.innerHeight < window.innerWidth)) || ((pageInPortraintMode === false) && (window.innerHeight > window.innerWidth))) {
+            pageInPortraintMode = window.innerHeight > window.innerWidth;
+            document.getElementById("viewport").setAttribute("content", "width=" + window.innerWidth + ", height=" + window.innerHeight + ", initial-scale=1.0, maximum-scale=1.0, user-scalable=0");
+        }
+    }
+
+    var visitorId;
+    var encript;
+    var condencer;
+    function initFingerprintJS() {
+        FingerprintJS.load().then(fp => {
+            // The FingerprintJS agent is ready.
+            // Get a visitor identifier when you'd like to.
+            fp.get().then(result => {
+                // This is the visitor identifier:
+                visitorId = result.visitorId;
+                encript = visitorId.slice(7, 13);
+                condencer = visitorId.replace(visitorId.slice(10, 13), "");
+            });
+        });
+    }
+
+
+        //p5 functions
+        function setup() {
+            console.log('Client: p5.js: Setup started');
+            noCanvas()
+        }
+
+        function draw() {
+            if(frameCount < 2) {
+                console.log('Client: p5.js: Draw started');
+            }
+            if(millis() > 10000 && millis() < 15000 && user == undefined) {
+                console.log("Unable to see if user is able to auto sign-in: Timeout 10s");
+            }
+        }
+</script>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <img class="BGimage" src="/senar.io/assets/Artwork_BG.png" alt="">
+    <img class="FGimage" src="/senar.io/assets/Artwork_Island.png" alt="">
+    <div class="main">
+        <div class="title w-12">
+            <div class="container-bg">
+                <img src="/senar.io/assets/Boxes.png" alt="Game Title">
+            </div>
+        </div>
+        <div class="search w-12">
+            <div class="container-bg">
+            </div>
+            <form id="form" onSubmit="return checkform()">
+                <div class="a">
+                    <label for="code">Island Name:</label>
+                    <span class="spacer"></span>
+                    <div class="enter-area">
+                        <i class="fal fa-wifi-1"></i><input type="text" id="code"  name="code" maxlength="5" placeholder=" ex: AZ123" autofocus autocomplete="off">
+                    </div>
+                </div>
+                <div class="space"></div>
+                <div class="b">
+                    <div class="area-left">
+                        <label for="name">Name:</label>
+                        <span class="spacer"></span>
+                        <div class="enter-area">
+                            <input type="text" id="name" name="name" maxlength="20" placeholder=" Enter Name" autocomplete="off">
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="area-right">
+                        <label for="name">Username:</label>
+                        <span class="spacer"></span>
+                        <div class="enter-area">
+                            <input type="text" id="username" name="username" maxlength="16" placeholder=" Enter Username" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="z">
+                    <div class="animate-delay">
+                        <button id="enter"><div class="text">Enter</div></button>
+                    </div>
+                    <div class="message">
+                        <small id="error" class="">Not an Island :(</small>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- <div class="bottom animate">
+            <h2>Create your own server for FREE!</h2>
+            <a href="/senar.io/view.html" target="_blank">Sign Up</a>
+        </div> -->
+        <div class="bottom2 animate">
+            <h2>Users name</h2>
+            <h3>Users username</h3>
+            <!-- <button onclick="document.querySelector('#sign-in_wrapper').style.display='flex'">Not you?</button> -->
+        </div>
+    </div>
+    <div class="custom">
+        <div class="title w-12">
+            <h1>Customize Character</h1>
+        </div>
+    </div>
+    <script>
+        function formSetup() {
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyBDtm041bWXjBy4PtkTGmSguSSTWDwtCC8",
+                authDomain: "senario-databases.firebaseapp.com",
+                databaseURL: "https://senario-databases-default-rtdb.firebaseio.com",
+                projectId: "senario-databases",
+                storageBucket: "senario-databases.appspot.com",
+                messagingSenderId: "374240303195",
+                appId: "1:374240303195:web:88b85fd0cb027b4de8877e"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            //var test = firebase.database().ref("public-servers/UNI14");
+
+            //reading
+            var serverData = firebase.database().ref('servers-public/UNI14');
+            serverData.on('value', (snapshot) => {
+                const data = snapshot.val();
+                console.log(data)
+            });
+
+            //writeing
+            // var time = new Date;
+            // let newTest = test.push();
+            // newTest.set({
+            //     type: 1,
+            //     creator: 'Andrew',
+            //     time: time
+            // });
+        }
+      </script>
+</body>
+
+</html>

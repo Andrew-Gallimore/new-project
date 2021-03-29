@@ -1,0 +1,44 @@
+Hello future Andrew, so you have forgoten how to add a new version of your node application (from github) onto your glitch.com page.
+
+
+Real quick:
+-------------------------------------------------------\
+Yes, you will have needed to push it to a github repository first, but you can look up guides 
+for how to on google, and remember to put "git push -f origin <name-of-branch>" when it comes to that.
+
+Here are the instructions I had used: 
+https://docs.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line
+-------------------------------------------------------/
+
+
+
+
+
+> What you need to do is go to the GitHub repository.
+	Press the green 'code' button and grab the HTTP code.
+
+> Then go to the glitch page you want to change out and manualy delete all the files in it.
+	(It will look like there is one final file that won't delete but if you were to refresh you would see it is gone)
+
+> Go to the Terminal, it should be under tools.
+
+> Type "git clone https://github.com/Andrew-Gallimore/new-project.git ." into the terminal.
+                  \_______________________  ________________________/  \
+                                          \/                            \
+                    This URL will be that HTTP code you got from         \This . is what puts the copy of the repository
+			              GitHub earlyer                                        in the main directory and not a new folder
+
+
+> Now you have the full repository (which if you reloaded would show you the defalt fist one you put in) we need the
+  correct branch from inside.
+	Go look at the GitHub Repository and find the title of the branch you want and remember it.
+
+> Type "git checkout v1.2" into the terminal.
+                     \  /
+                      \/
+          This will be the title of
+             the branch you want
+
+> Finaly you will need to type "refresh" into the terminal to show all the new files on the page.
+
+And your done!
